@@ -45,13 +45,13 @@ def main():
                 online = get_statuses_online()
                 if int(online) == 1:
                     message('good')
-                    time.sleep(3600)
+                    time.sleep(1380)
                 time.sleep(120)
             except:
                 message('error')
                 time.sleep(300)
         else:
-            time.sleep(3600)
+            time.sleep(1200)
 
 
 if __name__ == '__main__':
