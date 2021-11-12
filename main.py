@@ -37,10 +37,15 @@ def message(what):
 
 def main():
     while True:
-        current_date_time = datetime.datetime.now().time()
+        current_date_time = datetime.datetime.now()
+        current_time_difference = datetime.timedelta(hours=3,
+                                                     minutes=0,
+                                                     seconds=0)
+        current_time_server = (current_date_time - current_time_difference).\
+            time().replace(microsecond=0)
         time_start = datetime.time(1, 30, 00)
         time_finish = datetime.time(5, 30, 00)
-        if time_start < current_date_time < time_finish:
+        if time_start < current_time_server < time_finish:
             try:
                 online = get_statuses_online()
                 if int(online) == 1:
